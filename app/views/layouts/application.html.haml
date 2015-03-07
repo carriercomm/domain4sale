@@ -1,0 +1,42 @@
+!!!
+%html
+  %head
+    %title= request.domain
+    / Latest compiled and minified CSS
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", :rel => "stylesheet"}/
+    / Optional theme
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css", :rel => "stylesheet"}/
+    / Latest compiled and minified JavaScript
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"}
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .outer
+      .middle
+        #main.container
+          .page-header
+            %h1
+              Domain is for sale / Домен продается
+
+          %form.form-horizontal{:action => "/", :method => "post"}
+            = hidden_field_tag :authenticity_token, form_authenticity_token
+            %fieldset
+              .form-group
+                %label.col-xs-2.control-label{ for: 'email' } Email
+                .col-xs-10
+                  %input#email.form-control{ type: 'text', name: 'email', placeholder: 'Email' }
+              .form-group
+                %label.col-xs-2.control-label{ for: 'message' } Message
+                .col-xs-10
+                  %textarea#message.form-control{ rows: 3, name: 'message', placeholder: 'Message' }  
+              .form-group
+                .col-xs-10.col-xs-offset-2
+                  %button.btn.btn-primary{ type: :submit } Send request / Отправить запрос
+
+    %footer.footer
+      .container
+        .col-xs-9
+        .col-xs-3.text-right
+          Photo by
+          %a{:href => "https://unsplash.com/pixelatelier", :target => "_blank"} Christian Holzinger
