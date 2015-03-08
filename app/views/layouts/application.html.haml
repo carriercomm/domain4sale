@@ -36,7 +36,22 @@
 
     %footer.footer
       .container
-        .col-xs-9
+        .col-xs-3
+          / LiveInternet counter
+          :javascript
+            <!--
+            document.write("<a href='//www.liveinternet.ru/click;Domains4sale' "+
+            "target=_blank><img src='//counter.yadro.ru/hit;Domains4sale?t26.5;r"+
+            escape(document.referrer)+((typeof(screen)=="undefined")?"":
+            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+            screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+            ";"+Math.random()+
+            "' alt='' title='LiveInternet: показано число посетителей за"+
+            " сегодня' "+
+            "border='0' width='88' height='15'><\/a>")
+            //-->
+          / /LiveInternet
+        .col-xs-6
         .col-xs-3.text-right
           Photo by
           %a{:href => "https://unsplash.com/pixelatelier", :target => "_blank"} Christian Holzinger
