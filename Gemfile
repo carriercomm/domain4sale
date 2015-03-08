@@ -43,3 +43,5 @@ gem 'capistrano-passenger', group: :development
 
 gem 'haml'
 gem "haml-rails"
+
+gem 'i18n'
