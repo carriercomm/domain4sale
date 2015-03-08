@@ -4,6 +4,6 @@ class RequestMailer < ActionMailer::Base
   
   def urequest data
     @data = data
-    mail(subject: "Запрос о покупке сайта #{data[:domain]}")
+    mail(subject: "Запрос о покупке домена #{data[:domain]}")
   end
 end

@@ -4,6 +4,8 @@ lock '3.4.0'
 set :application, 'domain4sale'
 set :repo_url, 'https://github.com/mastedm/domain4sale.git'
 
+set :rvm_ruby_version, '2.2.0'
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
